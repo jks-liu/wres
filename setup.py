@@ -9,12 +9,12 @@ from setuptools import setup, find_packages
 
 MODULE_PATH = path.abspath(path.dirname(__file__))
 
-with open(path.join(MODULE_PATH, 'README.ORG')) as f:
+with open(path.join(MODULE_PATH, 'README.txt')) as f:
     LONG_DESCRIPTION = f.read()
 
 setup(
     name='wres',
-    version='1.0.1',
+    version='1.0.2',
     description='Set/Get Winsows Timer Resolution',
     long_description=LONG_DESCRIPTION,
 
