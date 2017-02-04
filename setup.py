@@ -14,7 +14,7 @@ with open(path.join(MODULE_PATH, 'README.ORG')) as f:
 
 setup(
     name='wres',
-    version='1.0.0',
+    version='1.0.1',
     description='Set/Get Winsows Timer Resolution',
     long_description=LONG_DESCRIPTION,
 

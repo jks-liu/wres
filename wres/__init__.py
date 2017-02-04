@@ -7,7 +7,7 @@ import logging
 import os
 
 
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 __author__ = 'Meme Kagurazaka'
 
 #pylint: disable=invalid-name
@@ -78,7 +78,9 @@ def main():
     Type `windows-resolution --help' to see other options.
     """
     import argparse
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        description="""Set system timer tesolution.
+        Show current system timer resolution without argument.""")
     parser.add_argument('-s', '--set', help='set resolution in 100-ns units',
                         type=int, metavar='RESOLUTION')
     parser.add_argument('--setmax', help='set maximum resolution',

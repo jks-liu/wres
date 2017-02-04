@@ -1,0 +1,63 @@
+* wres
+  Set/Get Winsows Timer Resolution.
+
+  wres is short for Windows RESolution.
+
+  The function of this module is like Windows API [[https://msdn.microsoft.com/en-us/library/dd757624(VS.85).aspx][timeBeginPeriod]]
+  and [[https://msdn.microsoft.com/en-us/library/dd757626(v%3Dvs.85).aspx][timeEndPeriod]].
+  But the implementation used Undocumented [[http://undocumented.ntinternals.net/index.html?page%3DUserMode%252FUndocumented%2520Functions%252FTime%252FNtSetTimerResolution.html][NtSetTimerResolution]]
+  of NTDLL. It offers microsecond level control.
+** Install
+   #+BEGIN_SRC sh
+     pip install wres
+   #+END_SRC
+** Usage
+   #+BEGIN_SRC python
+     import wres
+
+     # Query windows timer resolution in 100-ns units
+     minres, maxres, curres = wres.query_resolution()
+
+     # Set resolution to 1.5 ms
+     # Automatically restore previous resolution when exit with statement
+     with wres.set_resolution(15000):
+         pass
+
+     # Set resolution to max resolution
+     with wres.set_resolution():
+         pass
+   #+END_SRC
+** Util
+   After installing =wres=, command =windows-resolution= is available.
+   #+BEGIN_SRC
+     usage: windows-resolution [-h] [-s RESOLUTION] [--setmax] [--setmin] [-v]
+
+     Set system timer tesolution. Show current system timer resolution without
+     argument.
+
+     optional arguments:
+     -h, --help            show this help message and exit
+         -s RESOLUTION, --set RESOLUTION
+         set resolution in 100-ns units
+         --setmax              set maximum resolution
+         --setmin              set minimum resolution
+         -v, --version         show version
+   #+END_SRC
+** details
+*** ~set_resolution~
+    Set resolution of system timer.
+
+    Input: \\
+    =DesiredResolution= [default 0], in 100-ns units.
+    This function will auto revision the value if it is out of range,
+    so default 0 means set maximum resolution.
+
+    Should be used in =with= statement, target is current resolution,
+    in 100-ns units.
+*** ~query_resolution~
+    Query resolution of system timer.
+
+    Return a tuple of (min, max, current) resolution, in 100-ns units.
+    Ref to [[http://undocumented.ntinternals.net/index.html?page%3DUserMode%252FUndocumented%2520Functions%252FTime%252FNtQueryTimerResolution.html][NtQueryTimerResolution]].
+** License
+   Meme Kagurazaka (c) 2017, Public Domain.
