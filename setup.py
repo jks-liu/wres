@@ -14,7 +14,7 @@ with open(path.join(MODULE_PATH, 'README.ORG')) as f:
 
 setup(
     name='wres',
-    version='0.0.1',
+    version='1.0.0',
     description='Set/Get Winsows Timer Resolution',
     long_description=LONG_DESCRIPTION,
 
@@ -37,7 +37,7 @@ setup(
         'Topic :: System :: Systems Administration',
 
         # Pick your license as you wish (should match "license" above)
-        'License :: Public Domain'
+        'License :: Public Domain',
 
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
