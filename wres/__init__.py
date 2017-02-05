@@ -1,4 +1,4 @@
-"""Set/Get Winsows Timer Resolution"""
+"""Set/Get Windows Timer Resolution"""
 
 from contextlib import contextmanager
 import ctypes
@@ -7,7 +7,7 @@ import logging
 import os
 
 
-__version__ = '1.0.2'
+__version__ = '1.0.3'
 __author__ = 'Meme Kagurazaka'
 
 #pylint: disable=invalid-name

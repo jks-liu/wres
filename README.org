@@ -1,5 +1,5 @@
 * wres
-  Set/Get Winsows Timer Resolution.
+  Set/Get Windows Timer Resolution.
 
   wres is short for Windows RESolution.
 
@@ -36,12 +36,12 @@
      argument.
 
      optional arguments:
-     -h, --help            show this help message and exit
-         -s RESOLUTION, --set RESOLUTION
-         set resolution in 100-ns units
-         --setmax              set maximum resolution
-         --setmin              set minimum resolution
-         -v, --version         show version
+       -h, --help            show this help message and exit
+       -s RESOLUTION, --set RESOLUTION
+                             set resolution in 100-ns units
+       --setmax              set maximum resolution
+       --setmin              set minimum resolution
+       -v, --version         show version
    #+END_SRC
 ** details
 *** ~set_resolution~

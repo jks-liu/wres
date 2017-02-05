@@ -1,4 +1,4 @@
-"""Winsows Resolution
+"""Windows Resolution
 
 Ref:
 https://github.com/jks-liu/wres
@@ -14,8 +14,8 @@ with open(path.join(MODULE_PATH, 'README.txt')) as f:
 
 setup(
     name='wres',
-    version='1.0.2',
-    description='Set/Get Winsows Timer Resolution',
+    version='1.0.3',
+    description='Set/Get Windows Timer Resolution',
     long_description=LONG_DESCRIPTION,
 
     url='https://github.com/jks-liu/wres',
